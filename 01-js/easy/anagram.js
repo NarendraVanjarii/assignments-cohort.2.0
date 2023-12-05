@@ -5,7 +5,17 @@
 */
 
 function isAnagram(str1, str2) {
-
+  return (
+    str1
+      .replace(/ /g, "")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+      .localeCompare(
+        str2.replace(/ /g, "").toLowerCase().split("").sort().join("")
+      ) === 0
+  );
 }
 
 module.exports = isAnagram;
